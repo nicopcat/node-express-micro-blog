@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('./partials/head.ejs') %>
+
+
+<body>
+  <h1>Home Page</h1>
+  <%- include('./partials/nav.ejs') %>
+  <br />
+
+  <p>💻
+    A frontend dev begginer
+    much to learn and try ✌
+  </p>
+  <p>
+    🎵
+    A deep listener
+    幸福莫过于期待着下一张专辑
+  </p>
+  <p>
+    🎬
+    A dreamer
+    One of the greatest power that Morphius possesses, is to dream and hope, against Luficer
+  </p>
+
+  <br />
+
+  <h1>All Blogs</h1>
+  <% if(blogs.length > 0) { %>
+  <% blogs.forEach(x=>{%>
+  <div class="post">
+    <h3> <%=x.title  %> </h3>
+    <p><%=x.content  %></p>
+  </div>
+  <% }) %>
+
+  <% } else {%>
+  <p>opps, 一片荒芜 ..</p>
+  <% }%>
+  <%- include('./partials/footer.ejs') %>
+
+
+</body>
+
+</html>
