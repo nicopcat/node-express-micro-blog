@@ -1,10 +1,14 @@
 const express = require('express');
 const app = express();
-
+const morgan = require('morgan');
 // register view engine
 app.set('view engine','ejs')
 
 app.listen(3000);
+
+app.use(morgan('tiny'));
+
+
 
 app.get('/', (req, res) => {
   // res.send('<p>using express!</p>');
@@ -25,6 +29,10 @@ app.get('/about', (req, res) => {
 // redirects
 app.get('/about-me', (req, res) => {
   res.redirect('/about',{title: 'About'})
+})
+
+app.get('/new', (req, res) => {
+  res.render('new',{title: 'New Post'});
 })
 
 // 404 page
