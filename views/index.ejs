@@ -5,44 +5,50 @@
 
 
 <body>
-  <%- include('./partials/header.ejs') %>
-
-  <%- include('./partials/nav.ejs') %>
-  <br />
-
-  <p>💻
-    这是小田在 Node.js + Express 弄的blog
-  </p>
-  <br />
-
-  <p>
-    🎵
-    正在收听Spotify Weekly
-  </p>
-  <br />
-
-  <p>
-    🎬
-    想看电影
-  </p>
-
-  <br />
-
   <div class="container">
-    <h1>All Blogs</h1>
-    <% if(blogs.length > 0) { %>
-    <% blogs.forEach(x=>{%>
-    <div class="post">
-      <h2> <%=x.title  %> </h2>
-      <p><%=x.content  %></p>
+    <%- include('./partials/header.ejs') %>
+
+    <%- include('./partials/nav.ejs') %>
+    <br />
+
+    <p>💻
+      这是小田在 Node.js + Express 弄的blog
+    </p>
+    <br />
+
+    <p>
+      🎵
+      正在收听Spotify Weekly
+    </p>
+    <br />
+
+    <p>
+      🎬
+      想看电影
+    </p>
+
+    <br />
+
+    <div class="main">
+      <h1>All Blogs</h1>
+      <% if(blogs.length> 0) { %>
+      <% blogs.forEach(x=>{%>
+      <div class="post">
+        <h2>
+          <%=x.title %>
+        </h2>
+        <p>
+          <%=x.snippets %>
+        </p>
+      </div>
+      <% }) %>
+
+      <% } else {%>
+      <p>opps, 一片荒芜 ..</p>
+      <% }%>
+      <%- include('./partials/footer.ejs') %>
+
     </div>
-    <% }) %>
-
-    <% } else {%>
-    <p>opps, 一片荒芜 ..</p>
-    <% }%>
-    <%- include('./partials/footer.ejs') %>
-
   </div>
 </body>
 

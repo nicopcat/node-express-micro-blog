@@ -1,0 +1,111 @@
+  @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;1,400&family=Roboto&display=swap');
+
+  body {
+    max-width: 1200px;
+    min-width: 400px;
+    margin: 0 auto;
+    padding: 2rem 4rem;
+    font-family: 'Open Sans', sans-serif;
+  }
+
+  a,
+  p,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+    margin: 0;
+    padding: 0;
+    color: #333;
+    text-decoration: none;
+  }
+
+  input,
+  textarea {
+    outline: none;
+  }
+
+  .title {
+    font-size: medium;
+    margin: 0 6px;
+  }
+
+  .navbar {
+    margin: 2rem 1rem;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-end;
+  }
+
+  .navbar a {
+    padding: 0 .8rem;
+  }
+
+  .navbar a:hover {
+    color: green;
+  }
+
+  .container {
+    margin: 1rem;
+  }
+
+  .container .post {
+    margin: 10px 6px;
+    padding: 1rem;
+    max-width: 650px;
+    border: 1px solid rgba(206, 206, 206, 0.671);
+    border-radius: 6px;
+  }
+
+  .new_container {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .new_container h2 {
+    align-self: flex-start;
+    margin-bottom: 4rem;
+  }
+
+  .new_container .block {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+  }
+
+  .new_container .block .title {
+    width: 55px;
+  }
+
+  .new_container .block .content input {
+    width: 300px;
+    height: 20px;
+    padding: 4px 0;
+  }
+
+  .new_container .block .content .btn {
+    padding: 4px 12px;
+    border: none;
+    border-radius: 8px;
+    margin: 0 10px;
+    background-color: green;
+    color: #fff;
+  }
+
+  .new_container .block .content .btn:hover {
+    background-color: rgb(9, 166, 9);
+
+  }
+
+  .new_container .block .content textarea {
+    margin-top: 1rem;
+  }
+
+  footer {
+    position: fixed;
+    bottom: 5%;
+    right: 40%;
+  }

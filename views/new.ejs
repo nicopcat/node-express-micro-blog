@@ -1,26 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
-  <%- include('./partials/head.ejs') %>
+<%- include('./partials/head.ejs') %>
 
 <body>
   <%- include('./partials/header.ejs') %>
- 
+
   <%- include('./partials/nav.ejs') %>
 
-<br/>
-<div class="new_container">
-  <h2>新建博文</h2>
+  <br />
+  <div class="new_container">
+    <h2>新建博文</h2>
 
-  <div class="block">
-    <div class="title">标题：</div>
-    <div class="content">
-      <div><input type="text"><span><button class="btn">保存</button></span></div>
-      <div><textarea cols="44" rows="16" ></textarea></div>
+    <div class="block">
+      <!-- <div class="title">标题：</div> -->
+      <div class="content">
+        <div><input type="text" placeholder="输入标题"><span><button class="btn">保存</button></span></div>
+        <div><textarea cols="44" rows="16" placeholder="输入内容.."></textarea></div>
+      </div>
     </div>
   </div>
-</div>
 
   <%- include('./partials/footer.ejs') %>
 
 </body>
+
 </html>
