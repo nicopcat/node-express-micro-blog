@@ -34,12 +34,10 @@
       <% if(blogs.length> 0) { %>
       <% blogs.forEach(x=>{%>
       <div class="post">
-        <h2>
-          <%=x.title %>
-        </h2>
-        <p>
-          <%=x.snippets %>
-        </p>
+        <a href="/blogs/<%= x._id %>">
+          <h2><%=x.title %></h2>
+          <p><%=x.snippets %></p>
+        </a>
       </div>
       <% }) %>
 

@@ -72,7 +72,7 @@
 
   .new_container .block {
     display: flex;
-    flex-flow: row nowrap;
+    flex-flow: column nowrap;
     justify-content: flex-start;
   }
 
@@ -81,26 +81,41 @@
   }
 
   .new_container .block .content input {
-    width: 300px;
+    margin-top: 1rem;
+    width: 400px;
     height: 20px;
-    padding: 4px 0;
+    padding: 6px 8px;
+    border: 1px solid #333;
+    border-radius: 6px;
   }
-
-  .new_container .block .content .btn {
-    padding: 4px 12px;
+  .new_container .block .btn{
+    align-self: flex-start;
+  }
+  .new_container .block .btn button{
+    margin-top: 10px;
+    padding: 6px 16px;
     border: none;
-    border-radius: 8px;
-    margin: 0 10px;
+    border-radius: 4px;
     background-color: green;
     color: #fff;
   }
 
-  .new_container .block .content .btn:hover {
+  .new_container .block .btn button:hover {
     background-color: rgb(9, 166, 9);
-
   }
 
   .new_container .block .content textarea {
+    margin-top: 1rem;
+    padding: 6px 8px;
+    width: 400px;
+    border-radius: 6px;
+  }
+  .details{
+    margin: 1rem auto;
+    max-width: 550px;
+    min-width: 300px;
+  }
+  .content{
     margin-top: 1rem;
   }
 

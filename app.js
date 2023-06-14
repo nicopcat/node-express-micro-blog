@@ -19,11 +19,11 @@ mongoose.connect(dbURI, {
 // register view engine
 app.set('view engine','ejs')
 
-
 app.use(morgan('tiny'));
-
 // middleware for static files
 app.use(express.static('public'));
+app.use(express.urlencoded({extended: true}));
+
 
 app.get('/', (req, res) => {
   // res.render('index',{title: 'HomePage', blogs:blogs});
@@ -35,17 +35,12 @@ app.get('/about', (req, res) => {
 })
 
 
-app.get('/new', (req, res) => {
-  // res.render('new',{title: 'New Post'});
-  const blog = new Blog({
-    title: '水终于送到了',
-    snippets: '严重怀疑他们忘了',
-    body: '从早上10点等到15点，后来出去打了个电话，问他们水为什么还不送过来。借口曰早上忙不过来，我看是忘记了。说了一通，15分钟后水就送到了。'
-  })
+app.post('/blogs', (req, res) => {
+  console.log(req.body);
+  const blog = new Blog(req.body);
   blog.save().then((r) => {
-    console.log(r);
-    res.send(r);
-   }).catch((err) => {
+    res.redirect('/blogs')
+  }).catch((err) => {
     console.log(err);
   })
 })
@@ -53,6 +48,18 @@ app.get('/new', (req, res) => {
 app.get('/blogs', (req, res) => {
   Blog.find().sort({ createdAt: -1}).then((r) => {
     res.render('index',{title: 'About', blogs: r});
+   }).catch((err) => {
+    console.log(err);
+  })
+})
+
+app.get('/blogs/:id', (req, res) => {
+  const id = req.params.id;
+  Blog.findById(id).then(r => {
+    res.render('details', {
+      title: 'Blog details',
+      blog: r
+    });
    }).catch((err) => {
     console.log(err);
   })

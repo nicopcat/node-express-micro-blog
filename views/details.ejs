@@ -6,11 +6,15 @@
   <%- include('./partials/header.ejs') %>
 
   <%- include('./partials/nav.ejs') %>
-  <br />
 
-  <h3>opps... 404！</h3>
-  <br />
-  Go back <a href="/" style="color:green">Home</a>
+  <div class="details content">
+    <h2><%= blog.title %></h2>
+    <div class="content">
+      <p><%= blog.body %></p>
+    </div>
+    <a class="delete" data-doc=" <%= blog._id %>">删 除</a>
+  </div>
+
 
   <%- include('./partials/footer.ejs') %>
 
