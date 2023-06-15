@@ -47,15 +47,28 @@
   }
 
   .container {
+    position: relative;
+    min-height: 90vh;
     margin: 1rem;
   }
 
   .container .post {
-    margin: 10px 6px;
+    margin: 1rem 0;
     padding: 1rem;
     max-width: 650px;
     border: 1px solid rgba(206, 206, 206, 0.671);
     border-radius: 6px;
+  }
+  .container .post a  h2{
+    border-left: .5rem solid green;
+    padding: 0  1rem;
+  }
+  .container .post a p{
+    padding: 1rem  1rem;
+    
+  }
+  .container .post a h2:hover {
+    color: green;
   }
 
   .new_container {
@@ -111,6 +124,8 @@
     border-radius: 6px;
   }
   .details{
+    display: flex;
+    flex-flow: column nowrap;
     margin: 1rem auto;
     max-width: 550px;
     min-width: 300px;
@@ -118,9 +133,20 @@
   .content{
     margin-top: 1rem;
   }
+  .delete{
+    align-self: flex-end;
+    margin-top: 2rem;
+  }
+  .delete a:hover{
+    color: crimson;
+    cursor: pointer;
+  }
 
   footer {
-    position: fixed;
-    bottom: 5%;
-    right: 40%;
+    position: absolute;
+    bottom: -20px;
+    right: 38%;
+    font-size: small;
+    color: #727272;
+    letter-spacing: 2px;
   }

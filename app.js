@@ -34,9 +34,11 @@ app.get('/about', (req, res) => {
   res.render('about',{title: 'About'});
 })
 
+app.get('/new', (req, res) => {
+  res.render('new',{title: '写文章'});
+})
 
 app.post('/blogs', (req, res) => {
-  console.log(req.body);
   const blog = new Blog(req.body);
   blog.save().then((r) => {
     res.redirect('/blogs')
@@ -65,10 +67,10 @@ app.get('/blogs/:id', (req, res) => {
   })
 })
 
-app.get('/single-blog', (req, res) => {
-  Blog.findById('648972ae90c7b60531212d46').then((r) => {
-    console.log(r);
-    res.send(r);
+app.delete('/blogs/:id', (req, res) => {
+  const id = req.params.id;
+  Blog.findByIdAndDelete(id).then(r => {
+    res.json({ redirect: '/blogs' });
    }).catch((err) => {
     console.log(err);
   })
