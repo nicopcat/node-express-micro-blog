@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('./partials/head.ejs') %>
+
+
+<body>
+  <div class="container">
+    <div class="main">
+      <%- include('./partials/header.ejs') %>
+
+      <%- include('./partials/nav.ejs') %>
+
+      <h1>All Blogs</h1>
+      <% if(blogs.length> 0) { %>
+      <% blogs.forEach(x=>{%>
+      <div class="post">
+        <a href="/blogs/<%= x._id %>">
+          <h2><%=x.title %></h2>
+          <p><%=x.snippets %></p>
+        </a>
+      </div>
+      <% }) %>
+
+      <% } else {%>
+      <p>opps, 一片荒芜 ..</p>
+      <% }%>
+
+    </div>
+
+    <%- include('./partials/footer.ejs') %>
+
+  </div>
+
+</body>
+
+</html>

@@ -3,31 +3,33 @@
 <%- include('./partials/head.ejs') %>
 
 <body>
-  <%- include('./partials/header.ejs') %>
+  <div class="container">
+    <div class="main">
+      <%- include('./partials/header.ejs') %>
 
-  <%- include('./partials/nav.ejs') %>
+      <%- include('./partials/nav.ejs') %>
+      <div class="new_container">
 
-  <br />
-  <div class="new_container">
-    <h2>新建博文</h2>
-    <div class="block">
-      <!-- <div class="title">标题：</div> -->
-      <form action="/blogs" method="POST">
-        <div class="content">
-          <div><input type="text" placeholder="输入标题" id="title" name="title" required></div>
-          <div><input type="text" placeholder="输入摘选" id="snippets" name="snippets" required></div>
-          <div><textarea rows="16" placeholder="输入内容.." id="body" name="body" required></textarea>
-          </div>
-          <div class="btn">
-            <button>提 交</button>
-          </div>
+        <h2>新建博文</h2>
+        <div class="block">
+          <!-- <div class="title">标题：</div> -->
+          <form action="/blogs" method="POST">
+            <div class="content">
+              <div><input type="text" placeholder="输入标题" id="title" name="title" required></div>
+              <div><input type="text" placeholder="输入摘选" id="snippets" name="snippets" required></div>
+              <div><textarea rows="16" placeholder="输入内容.." id="body" name="body" required></textarea>
+              </div>
+              <div class="btn">
+                <button>提 交</button>
+              </div>
+            </div>
+          </form>
         </div>
-      </form>
+      </div>
     </div>
 
+    <%- include('./partials/footer.ejs') %>
   </div>
-
-  <%- include('./partials/footer.ejs') %>
 
 </body>
 
