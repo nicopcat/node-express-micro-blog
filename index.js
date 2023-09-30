@@ -1,15 +1,12 @@
 const express = require('express');
 const morgan = require('morgan');
-const mongoose = require('mongoose');
 const app = express();
+require('dotenv').config()
+
 const router = require('./routes/blogRoutes');
 
-// connect to MongoDB
-const dbURI = 'mongodb+srv://nekolas:admin123@webappcluster.rxnnbvp.mongodb.net/learnNodeDB';
-
-// const dbURI = 'mongodb+srv://admin:admin123@testapi.42jmqot.mongodb.net/Node-API?retryWrites=true&w=majority'
-
-
+const connectDB = require('./connectMongo')
+connectDB()
 // register view engine
 app.set('view engine','ejs')
 
@@ -25,14 +22,8 @@ app.use((req, res) => {
   res.status(404).render('404',{title: '404'});
 })
 
-mongoose.connect(dbURI, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true
-}).then((r) => {
-  console.log('connecting to db');
-  app.listen(3003,()=>{
-    console.log('服务器启动成功')
+const PORT = process.env.PORT
+
+app.listen(PORT, () => {
+    console.log("Server is running on port " + PORT)
 })
-}).catch((err) => {
-  console.log(err);
-});
