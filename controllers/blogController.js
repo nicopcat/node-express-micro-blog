@@ -5,7 +5,6 @@ const blog_index = (req, res) => {
 }
 
 const blog_about = (req, res) => {
-  console.log(req);
   res.render('about',{title: '关于'});
 }
 const blog_new = (req, res) => {
