@@ -2,7 +2,7 @@ const express = require('express');
 const morgan = require('morgan');
 const mongoose = require('mongoose');
 const app = express();
-const router = require('./routes/blogRoutes');
+const router = require('../routes/blogRoutes');
 
 // connect to MongoDB
 const dbURI = 'mongodb+srv://nekolas:admin123@webappcluster.rxnnbvp.mongodb.net/learnNodeDB';
