@@ -13,7 +13,7 @@ app.set('views', path.join(__dirname, 'views'))
 
 app.use(morgan('tiny'));
 // middleware for static files
-app.use(express.static('./public'));
+app.use(express.static('public'));
 app.use(express.urlencoded({extended: true}));
 
 // routes
