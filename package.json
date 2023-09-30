@@ -1,5 +1,5 @@
 {
-  "name": "nodejs.demos",
+  "name": "node-express-micro-blog",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -13,14 +13,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/nicopcat/nodejs.demos.git"
+    "url": "git+https://github.com/nicopcat/node-express-micro-blog.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/nicopcat/nodejs.demos/issues"
+    "url": "https://github.com/nicopcat/node-express-micro-blog/issues"
   },
-  "homepage": "https://github.com/nicopcat/nodejs.demos#readme",
+  "homepage": "https://github.com/nicopcat/node-express-micro-blog#readme",
   "dependencies": {
     "ejs": "^3.1.9",
     "express": "^4.18.2",
